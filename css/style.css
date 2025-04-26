@@ -46,6 +46,10 @@
     
 }
 
+.navbar .navbar-box .menu li a:hover {
+    color: #f3f5f7;
+}
+
 .navbar .navbar-box .menu li {
     list-style-type: none;
 }
@@ -70,6 +74,38 @@
     padding: 5px;
 }
 
+.navbar .navbar-box .hamburger {
+    display: none;
+    background-color: var(--seconday-color);
+    border-radius: 50%;
+}
+
+.navbar .navbar-box .hamburger .hamburger-box {
+    width: 30px;
+}
+
+.navbar .navbar-box .hamburger .hamburger-box .hamburger-inner, 
+.navbar .navbar-box .hamburger .hamburger-box .hamburger-inner::after,
+.navbar .navbar-box .hamburger .hamburger-box .hamburger-inner::before {
+    width: 30px;
+}
+
+.hamburger.is-active .hamburger-inner, 
+.hamburger.is-active .hamburger-inner::before, 
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #f3f5f7;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #f3f5f7;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
 
 
 .header {
@@ -263,6 +299,7 @@
 
 .footer .footer-nav {
    margin: 30px 0;
+   
 }
 
 .footer .footer-nav ul{
@@ -275,7 +312,7 @@
     text-decoration: none;
     color:#f3f5f7;
     margin: 20px;
-    font-size: 1.3em;
+    font-size: 1em;
     opacity: 0.7;
     transition: 0.5s;
     
@@ -293,6 +330,7 @@
 
 .footer .footerbottom p {
     color: #f3f5f7;
+    font-size: 15px;
 }
 
 .footer .footerbottom .designer {
@@ -304,7 +342,51 @@
 }
 
 
+@media screen and (max-width:1280px) {
+
+     .info .img {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+
 @media screen and (max-width:992px) {
+
+    .navbar .navbar-box .menu {
+        position: fixed;
+        right: 40px;
+        bottom: 140px;
+        flex-direction: column;
+        text-align: right;
+        row-gap: 30px;
+        transform: scaley(0);
+        transform-origin: bottom;
+        transition: .3s ease;
+        opacity: 0;
+    }
+    
+
+    .navbar .navbar-box .hamburger {
+        display: block;
+        position: fixed;
+        right: -100px;
+        bottom: 40px;
+        transition: .3s ease;
+    }
+
+    .navbar .navbar-box .hamburger.btn-active {
+        right: 40px;
+    }
+
+    .navbar .navbar-box .menu.menu-active {
+        transform: scaley(1);
+        transition: .3s ease;
+        opacity: 1;
+    }
+
+    .navbar.scrolled {
+        backdrop-filter: none;
+    }
 
     .info .img {
         grid-template-columns: repeat(2,1fr);
@@ -325,9 +407,15 @@
         gap: 50px;
     }
 
+    .section_container .gallery_content {
+        line-height: 30px;
+    }
+
     .detail .detail-box .desc p {
         margin-top: -30px;
+        line-height: 29px;
     }
+
 
     .detail .detail-box img {
         height: 400px;
@@ -346,6 +434,25 @@
 }
 
 @media screen and (max-width:728px) {
+    .navbar .navbar-box .menu {
+        position: fixed;
+        right: 40px;
+        bottom: 140px;
+        flex-direction: column;
+        text-align: right;
+        row-gap: 30px;
+        transform: scaley(0);
+        transform-origin: bottom;
+        transition: .3s ease;
+        opacity: 0;
+    }
+    .navbar .navbar-box .menu.menu-active {
+        transform: scaley(1);
+        transition: .3s ease;
+        opacity: 1;
+    }
+
+
     .info .img {
         gap: 1rem;
         justify-items: center;
@@ -381,7 +488,25 @@
 
 
 @media screen and (max-width:500px){
-    
+    .navbar .navbar-box .menu {
+        position: fixed;
+        right: 40px;
+        bottom: 140px;
+        flex-direction: column;
+        text-align: right;
+        row-gap: 30px;
+        transform: scaley(0);
+        transform-origin: bottom;
+        transition: .3s ease;
+        opacity: 0;
+    }
+    .navbar .navbar-box .menu.menu-active {
+        transform: scaley(1);
+        transition: .3s ease;
+        opacity: 1;
+    }
+
+
     .navbar .navbar-box .logo img{
         margin-left: -50px;
     }
@@ -398,7 +523,8 @@
     .detail .detail-box .desc p {
         font-size: 12px;
     }
-
+ 
+    
     .image_gallery img {
         height: 120px;
         width: 120px;
@@ -406,6 +532,7 @@
 
     .gallery .section_container {
         padding-bottom: 50px;
+        
     }
 
     .gallery_content h2 {
