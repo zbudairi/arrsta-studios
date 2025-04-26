@@ -488,33 +488,7 @@
 
 
 @media screen and (max-width:500px){
-    .navbar .navbar-box .menu {
-        position: fixed;
-        right: 40px;
-        bottom: 140px;
-        flex-direction: column;
-        text-align: right;
-        row-gap: 30px;
-        transform: scaley(0);
-        transform-origin: bottom;
-        transition: .3s ease;
-        opacity: 0;
-    }
-    .navbar .navbar-box .menu.menu-active {
-        transform: scaley(1);
-        transition: .3s ease;
-        opacity: 1;
-    }
-
-
-    .navbar .navbar-box .logo img{
-        margin-left: -50px;
-    }
-    
-    .navbar .navbar-box .menu {
-        display: none;
-    }
-
+   
     .detail .detail-box img {
         height: 200px;
         width: 200px;
@@ -530,7 +504,7 @@
         width: 120px;
     }
 
-    .gallery .section_container {
+    .gallery .section_contaigitner {
         padding-bottom: 50px;
         
     }
